@@ -64,6 +64,12 @@ function createBoard() {
 
 function flipCard() {
   const cardId = this.getAttribute('data-id');
+
+  // return if we are selecting an already selected card
+  if (chosenCardIds[0] === cardId) {
+    return
+  }
+
   const cardCode = cardArray[cardId].code; // Get the code of the flipped card
   chosenCardCodes.push(cardCode);
   chosenCardIds.push(cardId);

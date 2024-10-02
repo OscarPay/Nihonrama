@@ -77,11 +77,6 @@ body {
   font-size: 2rem; /* Font size for the back text */
 }
 
-/* Hover effect */
-.card:hover .card-inner {
-  transform: scale(1.05);
-}
-
 .plain-name {
   font-size: 0.8em; /* Smaller font size */
   text-align: center; /* Center the text */
