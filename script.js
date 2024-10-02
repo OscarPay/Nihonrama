@@ -10,7 +10,15 @@ const cardArray = [
   { code: 5, name: '読む', plainName: 'よむ', id: 9 },
   { code: 5, name: 'Leer', id: 10 },
   { code: 6, name: '書く', plainName: 'かく', id: 11 },
-  { code: 6, name: 'Escribir', id: 12 }
+  { code: 6, name: 'Escribir', id: 12 },
+  { code: 7, name: '話す', plainName: 'はなす', id: 13 },
+  { code: 7, name: 'Hablar', id: 14 },
+  { code: 8, name: '買う', plainName: 'かう', id: 15 },
+  { code: 8, name: 'Comprar', id: 16 },
+  { code: 9, name: '使う', plainName: 'つかう', id: 17 },
+  { code: 9, name: 'Usar', id: 18 },
+  { code: 10, name: '教える', plainName: 'おしえる', id: 19 },
+  { code: 10, name: 'Enseñar', id: 20 }
 ];
 
 let chosenCardCodes = [];
