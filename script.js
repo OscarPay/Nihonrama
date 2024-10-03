@@ -1,23 +1,23 @@
 const cardArray = [
-  { code: 1, name: '食べる', plainName: 'たべる', id: 1 },
+  { code: 1, name: '食べる', plainName: 'たべる', group: 1, id: 1 },
   { code: 1, name: 'Comer', id: 2 },
-  { code: 2, name: '飲む', plainName: 'のむ', id: 3 },
+  { code: 2, name: '飲む', plainName: 'のむ', group: 1, id: 3 },
   { code: 2, name: 'Beber', id: 4 },
-  { code: 3, name: '行く', plainName: 'いく', id: 5 },
+  { code: 3, name: '行く', plainName: 'いく', group: 1, id: 5 },
   { code: 3, name: 'Ir', id: 6 },
-  { code: 4, name: '見る', plainName: 'みる', id: 7 },
+  { code: 4, name: '見る', plainName: 'みる', group: 2, id: 7 },
   { code: 4, name: 'Mirar', id: 8 },
-  { code: 5, name: '読む', plainName: 'よむ', id: 9 },
+  { code: 5, name: '読む', plainName: 'よむ', group: 1, id: 9 },
   { code: 5, name: 'Leer', id: 10 },
-  { code: 6, name: '書く', plainName: 'かく', id: 11 },
+  { code: 6, name: '書く', plainName: 'かく', group: 1, id: 11 },
   { code: 6, name: 'Escribir', id: 12 },
-  { code: 7, name: '話す', plainName: 'はなす', id: 13 },
+  { code: 7, name: '話す', plainName: 'はなす', group: 1, id: 13 },
   { code: 7, name: 'Hablar', id: 14 },
-  { code: 8, name: '買う', plainName: 'かう', id: 15 },
+  { code: 8, name: '買う', plainName: 'かう', group: 1, id: 15 },
   { code: 8, name: 'Comprar', id: 16 },
-  { code: 9, name: '使う', plainName: 'つかう', id: 17 },
+  { code: 9, name: '使う', plainName: 'つかう', group: 1, id: 17 },
   { code: 9, name: 'Usar', id: 18 },
-  { code: 10, name: '教える', plainName: 'おしえる', id: 19 },
+  { code: 10, name: '教える', plainName: 'おしえる', group: 2, id: 19 },
   { code: 10, name: 'Enseñar', id: 20 }
 ];
 
@@ -41,6 +41,13 @@ function createBoard() {
     // Card front (displaying Japanese verb)
     const cardFront = document.createElement('div');
     cardFront.classList.add('card-front');
+
+    if (card.group) {
+      const plainNameElement = document.createElement('div');
+      plainNameElement.classList.add('group');
+      plainNameElement.innerText = card.group; // Display Hiragana name
+      cardFront.appendChild(plainNameElement);
+    }
 
     // Adding the plainName above the Japanese verb
     if (card.plainName) {

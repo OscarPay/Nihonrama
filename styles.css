@@ -83,6 +83,12 @@ body {
   color: #555; /* A lighter color for distinction */
 }
 
+.group {
+  font-size: 0.5em; /* Smaller font size */
+  text-align: center; /* Center the text */
+  color: #555; /* A lighter color for distinction */
+}
+
 .japanese-name {
   font-size: 1.2em; /* Default font size for the Japanese verb */
   text-align: center; /* Center the text */
