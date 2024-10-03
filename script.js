@@ -1,4 +1,4 @@
-const cardArray = [
+const baseArray = [
   { code: 1, name: '食べる', plainName: 'たべる', group: 1, id: '1' },
   { code: 1, name: 'Comer', id: '2' },
   { code: 2, name: '飲む', plainName: 'のむ', group: 1, id: '3' },
@@ -31,6 +31,44 @@ const cardArray = [
   { code: 15, name: 'Salir', id: '30' }
 ];
 
+const masuArray = [
+  { code: 1, name: '食べます', plainName: 'たべます', group: 1, id: '1' },
+  { code: 1, name: 'Comer', id: '2' },
+  { code: 2, name: '飲みます', plainName: 'のみます', group: 1, id: '3' },
+  { code: 2, name: 'Beber', id: '4' },
+  { code: 3, name: '行きます', plainName: 'いきます', group: 1, id: '5' },
+  { code: 3, name: 'Ir', id: '6' },
+  { code: 4, name: '見ます', plainName: 'みます', group: 2, id: '7' },
+  { code: 4, name: 'Mirar', id: '8' },
+  { code: 5, name: '読みます', plainName: 'よみます', group: 1, id: '9' }, // Leer
+  { code: 5, name: 'Leer', id: '10' },
+  { code: 6, name: '書きます', plainName: 'かきます', group: 1, id: '11' }, // Escribir
+  { code: 6, name: 'Escribir', id: '12' },
+  { code: 7, name: '話します', plainName: 'はなします', group: 1, id: '13' }, // Hablar
+  { code: 7, name: 'Hablar', id: '14' },
+  { code: 8, name: '買います', plainName: 'かいます', group: 1, id: '15' }, // Comprar
+  { code: 8, name: 'Comprar', id: '16' },
+  { code: 9, name: '使います', plainName: 'つかいます', group: 1, id: '17' }, // Usar
+  { code: 9, name: 'Usar', id: '18' },
+  { code: 10, name: '教えます', plainName: 'おしえます', group: 2, id: '19' }, // Enseñar
+  { code: 10, name: 'Enseñar', id: '20' },
+  { code: 11, name: 'します', plainName: 'します', group: 3, id: '21' }, // Hacer
+  { code: 11, name: 'Hacer', id: '22' },
+  { code: 12, name: '来ます', plainName: 'きます', group: 3, id: '23' }, // Venir
+  { code: 12, name: 'Venir', id: '24' },
+  { code: 13, name: '開けます', plainName: 'あけます', group: 2, id: '25' }, // Abrir
+  { code: 13, name: 'Abrir', id: '26' },
+  { code: 14, name: '閉めます', plainName: 'しめます', group: 2, id: '27' }, // Cerrar
+  { code: 14, name: 'Cerrar', id: '28' },
+  { code: 15, name: '出ます', plainName: 'でます', group: 2, id: '29' }, // Salir
+  { code: 15, name: 'Salir', id: '30' }
+];
+
+const cardArray = {
+  base: baseArray,
+  masu: masuArray
+}
+
 // Shuffle function using Fisher-Yates algorithm
 function shuffle(array) {
   let currentIndex = array.length, temporaryValue, randomIndex;
@@ -58,6 +96,7 @@ const cardsWon = [];
 
 const gameStatus = document.getElementById('gameStatus');
 const resetButton = document.getElementById('resetButton');
+let currentSet = 'base'; // Establecer el conjunto inicial
 
 // Initialize the game
 function initGame() {
@@ -74,7 +113,7 @@ function initGame() {
   gameBoard.innerHTML = '';
 
   // Shuffle the cards
-  const shuffledCards = shuffle([...cardArray]);
+  const shuffledCards = shuffle([...cardArray[currentSet]]);
 
   // Create the board with shuffled cards
   shuffledCards.forEach((card) => {
@@ -131,7 +170,7 @@ function flipCard() {
   if (lockBoard) return; // Do nothing if the board is locked
 
   const cardId = this.getAttribute('data-id');
-  const cardFlipped = cardArray.find((card) => card.id === cardId)
+  const cardFlipped = cardArray[currentSet].find((card) => card.id === cardId)
 
   // Do nothing if the same card is clicked
   if (firstCard && cardFlipped.id === firstCard.id) {
@@ -200,13 +239,22 @@ function resetBoard() {
 // Check if all pairs have been found
 function checkWinCondition() {
   const gameBoard = document.getElementById('gameBoard');
-  const totalCards = cardArray.length;
+  const totalCards = cardArray[currentSet].length;
   const flippedCards = gameBoard.querySelectorAll('.flipped').length;
 
   if (flippedCards === totalCards) {
     gameStatus.innerHTML = '¡Felicidades! ¡Has emparejado todas las cartas!<br>おめでとうございます！すべてのカードをマッチさせました！';
   }
 }
+
+function updateCardSet(form) {
+  currentSet = form; // Cambiar el conjunto actual
+  initGame();
+}
+
+// Agregar eventos a los botones
+document.getElementById('baseFormBtn').addEventListener('click', () => updateCardSet('base'));
+document.getElementById('masuFormBtn').addEventListener('click', () => updateCardSet('masu'));
 
 // Event listener for Reset button
 resetButton.addEventListener('click', initGame);

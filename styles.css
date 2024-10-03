@@ -45,6 +45,17 @@ body {
   background-color: #e0a800;
 }
 
+.change-button {
+  background-color: #fff; /* Color de fondo del botón */
+  color: #343a40; /* Color del texto */
+  border: none; /* Quitar borde */
+  border-radius: 5px; /* Bordes redondeados */
+  padding: 10px 20px; /* Espaciado interno del botón */
+  margin: 5px; /* Espacio entre botones */
+  font-size: 16px; /* Tamaño de fuente */
+  cursor: pointer; /* Cambiar cursor al pasar por encima */
+}
+
 /* Game Board Styling */
 .game-board {
   display: grid;
