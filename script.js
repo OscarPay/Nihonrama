@@ -18,7 +18,17 @@ const cardArray = [
   { code: 9, name: '使う', plainName: 'つかう', group: 1, id: '17' },
   { code: 9, name: 'Usar', id: '18' },
   { code: 10, name: '教える', plainName: 'おしえる', group: 2, id: '19' },
-  { code: 10, name: 'Enseñar', id: '20' }
+  { code: 10, name: 'Enseñar', id: '20' },
+  { code: 11, name: 'する', plainName: 'する', group: 3, id: '21' }, // Hacer
+  { code: 11, name: 'Hacer', id: '22' },
+  { code: 12, name: '来る', plainName: 'くる', group: 3, id: '23' }, // Venir
+  { code: 12, name: 'Venir', id: '24' },
+  { code: 13, name: '開ける', plainName: 'あける', group: 2, id: '25' }, // Abrir
+  { code: 13, name: 'Abrir', id: '26' },
+  { code: 14, name: '閉める', plainName: 'しめる', group: 2, id: '27' }, // Cerrar
+  { code: 14, name: 'Cerrar', id: '28' },
+  { code: 15, name: '出る', plainName: 'でる', group: 2, id: '29' }, // Salir
+  { code: 15, name: 'Salir', id: '30' }
 ];
 
 // Shuffle function using Fisher-Yates algorithm
@@ -80,6 +90,13 @@ function initGame() {
       // Card front (displaying Japanese verb)
       const cardFront = document.createElement('div');
       cardFront.classList.add('card-front');
+
+      if (card.group) {
+        const plainNameElement = document.createElement('div');
+        plainNameElement.classList.add('group');
+        plainNameElement.innerText = card.group; // Display Hiragana name
+        cardFront.appendChild(plainNameElement);
+      }
 
       // Adding the plainName above the Japanese verb if exists
       if (card.plainName) {
@@ -187,7 +204,7 @@ function checkWinCondition() {
   const flippedCards = gameBoard.querySelectorAll('.flipped').length;
 
   if (flippedCards === totalCards) {
-      gameStatus.textContent = 'Congratulations! You matched all the cards!';
+    gameStatus.innerHTML = '¡Felicidades! ¡Has emparejado todas las cartas!<br>おめでとうございます！すべてのカードをマッチさせました！';
   }
 }
 

@@ -118,6 +118,12 @@ body {
   text-align: center; /* Center the text */
 }
 
+.group {
+  font-size: 0.5em; /* Smaller font size */
+  text-align: center; /* Center the text */
+  color: #555; /* A lighter color for distinction */
+}
+
 /* Game Status Styling */
 .game-status {
   margin: 20px;
