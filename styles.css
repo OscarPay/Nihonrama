@@ -1,11 +1,4 @@
-/* Basic Reset */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
+.gameBody {
   font-family: Arial, sans-serif;
   background-color: #f8f9fa;
   display: flex;
@@ -13,16 +6,9 @@ body {
   align-items: center;
 }
 
-/* Navbar Styling */
 .navbar {
-  width: 100%;
   background-color: #343a40;
   color: white;
-  padding: 15px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-title {
@@ -30,30 +16,14 @@ body {
   font-weight: bold;
 }
 
-.reset-button {
+.btn-warning {
   background-color: #ffc107;
-  border: none;
   padding: 10px 20px;
-  font-size: 1rem;
   color: #343a40;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
 }
 
-.reset-button:hover {
-  background-color: #e0a800;
-}
-
-.change-button {
-  background-color: #fff; /* Color de fondo del botón */
-  color: #343a40; /* Color del texto */
-  border: none; /* Quitar borde */
-  border-radius: 5px; /* Bordes redondeados */
-  padding: 10px 20px; /* Espaciado interno del botón */
-  margin: 5px; /* Espacio entre botones */
-  font-size: 16px; /* Tamaño de fuente */
-  cursor: pointer; /* Cambiar cursor al pasar por encima */
+#baseFormBtn, #masuFormBtn {
+  margin-right: 1rem;
 }
 
 /* Game Board Styling */
@@ -72,6 +42,7 @@ body {
   height: 180px;
   perspective: 1000px; /* Enables 3D perspective */
   cursor: pointer;
+  border: none;
 }
 
 .card-inner {
@@ -114,6 +85,20 @@ body {
   font-size: 2rem;
   justify-content: center;
   align-items: center;
+}
+
+.card-match {
+  border-color: #28a745;
+  background-color: #28a745; /* Green color for matched cards */
+  color: white; /* White text for matched cards */
+}
+
+.card-match .plain-name  {
+  color: white; /* White text for matched cards */
+}
+
+.card-match .group  {
+  color: white; /* White text for matched cards */
 }
 
 /* Plain Name Styling */

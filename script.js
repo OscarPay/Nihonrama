@@ -211,6 +211,15 @@ function checkForMatch() {
 
 // Disable matched cards
 function disableCards() {
+  const cards = document.querySelectorAll('.card');
+  //mark cards
+  cards.forEach((card) => {
+    if (card.dataset.id === firstCard.id || card.dataset.id === secondCard.id) {
+      //traverse to .card-front
+      card.querySelector('.card-front').classList.add('card-match');
+      //card
+    }
+  });
   // Reset variables
   resetBoard();
 }
