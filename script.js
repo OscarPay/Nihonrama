@@ -1,3 +1,28 @@
+const colors = [
+  '#1F77B4', // Blue
+  '#FF7F0E', // Orange
+  '#2CA02C', // Green
+  '#D62728', // Red
+  '#9467BD', // Purple
+  '#8C564B', // Brown
+  '#E377C2', // Pink
+  '#7F7F7F', // Gray
+  '#BCBD22', // Yellow-Green
+  '#17BECF', // Cyan
+  '#AEC7E8', // Light Blue
+  '#FFBB78', // Light Orange
+  '#98DF8A', // Light Green
+  '#FF9896', // Light Red
+  '#C5B0D5', // Light Purple
+  '#C49C94', // Light Brown
+  '#F7B6D2', // Light Pink
+  '#C7C7C7', // Light Gray
+  '#DBDB8D', // Light Yellow-Green
+  '#9EDAE5'  // Light Cyan
+];
+
+let usedColors = new Set();
+
 const baseArray = [
   { code: 1, name: '食べる', plainName: 'たべる', group: 1, id: '1' },
   { code: 1, name: 'Comer', id: '2' },
@@ -212,14 +237,23 @@ function checkForMatch() {
 // Disable matched cards
 function disableCards() {
   const cards = document.querySelectorAll('.card');
-  //mark cards
+  const cardsMatched = [];
   cards.forEach((card) => {
     if (card.dataset.id === firstCard.id || card.dataset.id === secondCard.id) {
-      //traverse to .card-front
-      card.querySelector('.card-front').classList.add('card-match');
-      //card
+      cardsMatched.push(card);
     }
   });
+
+  if (cardsMatched.length !== 0) {
+    const randomColor = getUniqueColor();
+    cardsMatched.forEach((card) => {
+      let card_front = card.querySelector('.card-front')
+      card_front.classList.add('card-match');
+      card_front.style.backgroundColor = randomColor;
+      card_front.style.borderColor = randomColor;
+    })
+  } 
+ 
   // Reset variables
   resetBoard();
 }
@@ -236,7 +270,7 @@ function unflipCards() {
       }
     });
     resetBoard();
-  }, 1000); // Adjust delay as needed
+  }, 1500); // Adjust delay as needed
 }
 
 // Reset board variables
@@ -260,6 +294,32 @@ function updateCardSet(form) {
   currentSet = form; // Cambiar el conjunto actual
   initGame();
 }
+
+function getUniqueColor() {
+  if (usedColors.size >= colors.length) {
+    return getRandomColor();
+  }
+
+  let color;
+  do {
+    color = colors[Math.floor(Math.random() * colors.length)];
+  } while (usedColors.has(color));
+
+  usedColors.add(color);
+  return color;
+}
+
+function getRandomColor() {
+  const min = 0;
+  const max = 150; // Limit the maximum value to avoid bright colors
+  const r = Math.floor(Math.random() * (max - min + 1)) + min;
+  const g = Math.floor(Math.random() * (max - min + 1)) + min;
+  const b = Math.floor(Math.random() * (max - min + 1)) + min;
+  return `rgb(${r}, ${g}, ${b})`;
+}
+
+
+
 
 // Agregar eventos a los botones
 document.getElementById('baseFormBtn').addEventListener('click', () => updateCardSet('base'));
