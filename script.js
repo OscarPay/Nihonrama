@@ -89,9 +89,44 @@ const masuArray0 = [
   { code: 15, name: 'Salir', id: '30' }
 ];
 
+const teArray0 = [
+  { code: 1, name: '食べて', plainName: 'たべて', group: 1, id: '1' },
+  { code: 1, name: 'Comer', id: '2' },
+  { code: 2, name: '飲んで', plainName: 'のんで', group: 1, id: '3' },
+  { code: 2, name: 'Beber', id: '4' },
+  { code: 3, name: '行って', plainName: 'いって', group: 1, id: '5' },
+  { code: 3, name: 'Ir', id: '6' },
+  { code: 4, name: '見て', plainName: 'みて', group: 2, id: '7' },
+  { code: 4, name: 'Mirar', id: '8' },
+  { code: 5, name: '読んで', plainName: 'よんで', group: 1, id: '9' },
+  { code: 5, name: 'Leer', id: '10' },
+  { code: 6, name: '書いて', plainName: 'かいて', group: 1, id: '11' },
+  { code: 6, name: 'Escribir', id: '12' },
+  { code: 7, name: '話して', plainName: 'はなして', group: 1, id: '13' },
+  { code: 7, name: 'Hablar', id: '14' },
+  { code: 8, name: '買って', plainName: 'かって', group: 1, id: '15' },
+  { code: 8, name: 'Comprar', id: '16' },
+  { code: 9, name: '使って', plainName: 'つかって', group: 1, id: '17' },
+  { code: 9, name: 'Usar', id: '18' },
+  { code: 10, name: '教えて', plainName: 'おしえて', group: 2, id: '19' },
+  { code: 10, name: 'Enseñar', id: '20' },
+  { code: 11, name: 'して', plainName: 'して', group: 3, id: '21' }, // Hacer
+  { code: 11, name: 'Hacer', id: '22' },
+  { code: 12, name: '来て', plainName: 'きて', group: 3, id: '23' }, // Venir
+  { code: 12, name: 'Venir', id: '24' },
+  { code: 13, name: '開けて', plainName: 'あけて', group: 2, id: '25' }, // Abrir
+  { code: 13, name: 'Abrir', id: '26' },
+  { code: 14, name: '閉めて', plainName: 'しめて', group: 2, id: '27' }, // Cerrar
+  { code: 14, name: 'Cerrar', id: '28' },
+  { code: 15, name: '出て', plainName: 'でて', group: 2, id: '29' }, // Salir
+  { code: 15, name: 'Salir', id: '30' }
+];
+
+
 const unit0 = {
   base: baseArray0,
-  masu: masuArray0
+  masu: masuArray0,
+  te: teArray0
 }
 
 const baseArray17 = [
@@ -152,9 +187,40 @@ const masuArray17 = [
   { code: 13, name: 'Viajar por trabajo', id: '26' }
 ]
 
+const teArray17 = [
+  { code: 1, name: '覚えて', plainName: 'おぼえて', group: 2, id: '1' },
+  { code: 1, name: 'Memorizar', id: '2' },
+  { code: 2, name: '忘れて', plainName: 'わすれて', group: 2, id: '3' },
+  { code: 2, name: 'Olvidar', id: '4' },
+  { code: 3, name: 'なくして', plainName: 'なくして', group: 1, id: '5' },
+  { code: 3, name: 'Perder', id: '6' },
+  { code: 4, name: '出して', plainName: 'だして', group: 1, id: '7' },
+  { code: 4, name: 'Entregar', id: '8' },
+  { code: 5, name: '払って', plainName: 'はらって', group: 1, id: '9' },
+  { code: 5, name: 'Pagar', id: '10' },
+  { code: 6, name: '返して', plainName: 'かえして', group: 1, id: '11' },
+  { code: 6, name: 'Devolver', id: '12' },
+  { code: 7, name: '出かけて', plainName: 'でかけて', group: 2, id: '13' },
+  { code: 7, name: 'Salir', id: '14' },
+  { code: 8, name: '脱いで', plainName: 'ぬいで', group: 1, id: '15' },
+  { code: 8, name: 'Quitarse (ropa)', id: '16' },
+  { code: 9, name: '持って行って', plainName: 'もっていって', group: 1, id: '17' },
+  { code: 9, name: 'Llevar (algo)', id: '18' },
+  { code: 10, name: '持って来て', plainName: 'もってきて', group: 3, id: '19' },
+  { code: 10, name: 'Traer (algo)', id: '20' },
+  { code: 11, name: '心配して', plainName: 'しんぱいして', group: 3, id: '21' },
+  { code: 11, name: 'Preocuparse', id: '22' },
+  { code: 12, name: '残業して', plainName: 'ざんぎょうして', group: 3, id: '23' },
+  { code: 12, name: 'Hacer horas extras', id: '24' },
+  { code: 13, name: '出張して', plainName: 'しゅっちょうして', group: 3, id: '25' },
+  { code: 13, name: 'Viajar por trabajo', id: '26' }
+];
+
+
 const unit17 = {
   base: baseArray17,
-  masu: masuArray17
+  masu: masuArray17,
+  te: teArray17
 }
 
 const cardArray = {
@@ -406,10 +472,20 @@ document.getElementById('masuFormBtn').addEventListener('click', () => {
   rightCanvas.hide();
 });
 
+document.getElementById('teFormBtn').addEventListener('click', () => {
+  updateCardSet('te')
+  rightCanvas.hide();
+});
+
 // Event listener for Reset button
 resetButton.addEventListener('click', () => {
   initGame();
   rightCanvas.hide();
+});
+
+document.getElementById('unit17').addEventListener('click', () => {
+  updateUnit(0);
+  leftCanvas.hide();
 });
 
 document.getElementById('unit17').addEventListener('click', () => {
