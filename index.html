@@ -8,32 +8,48 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Navbar -->
-    <!-- <nav class="navbar">
-        <div class="navbar-title">Memorama</div>
-
-
-
-        <button id="resetButton" class="reset-button">Reset</button>
-    </nav> -->
-
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-            <div class="navbar-title">Memorama</div>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-                </ul>
-                <div class="d-flex">
-                    <button id="baseFormBtn" class="btn btn-outline-primary">Base</button>
-                    <button id="masuFormBtn" class="btn btn-outline-primary">ます</button>
-                    <button id="resetButton" class="btn btn-warning">Reset</button>
-                </div>
-            </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasLeft" aria-controls="offcanvasLeft">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="navbar-title">Memorama</div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16">
+              <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3m5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3"/>
+            </svg>
+          </button>
         </div>
     </nav>
+      
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasLeft" aria-labelledby="offcanvasLeftLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasLeftLabel">Unidades</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <button id="unit17" class="btn btn-outline-primary">Unidad 17</button>
+      </div>
+    </div>
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasRightLabel">Formas</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <div class="d-flex justify-content-center">
+          <button id="resetButton" class="btn btn-warning">Reset</button>
+        </div>
+        
+        <hr>
+
+        <div>
+          <button id="baseFormBtn" class="btn btn-outline-primary">Base</button>
+          <button id="masuFormBtn" class="btn btn-outline-primary">ます</button>
+        </div>
+      </div>
+    </div>
 
     <section class="gameBody">
 

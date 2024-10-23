@@ -23,7 +23,7 @@ const colors = [
 
 let usedColors = new Set();
 
-const baseArray = [
+const baseArray0 = [
   { code: 1, name: '食べる', plainName: 'たべる', group: 1, id: '1' },
   { code: 1, name: 'Comer', id: '2' },
   { code: 2, name: '飲む', plainName: 'のむ', group: 1, id: '3' },
@@ -56,7 +56,7 @@ const baseArray = [
   { code: 15, name: 'Salir', id: '30' }
 ];
 
-const masuArray = [
+const masuArray0 = [
   { code: 1, name: '食べます', plainName: 'たべます', group: 1, id: '1' },
   { code: 1, name: 'Comer', id: '2' },
   { code: 2, name: '飲みます', plainName: 'のみます', group: 1, id: '3' },
@@ -89,10 +89,81 @@ const masuArray = [
   { code: 15, name: 'Salir', id: '30' }
 ];
 
-const cardArray = {
-  base: baseArray,
-  masu: masuArray
+const unit0 = {
+  base: baseArray0,
+  masu: masuArray0
 }
+
+const baseArray17 = [
+  { code: 1, name: '覚える', plainName: 'おぼえる', group: 2, id: '1' },
+  { code: 1, name: 'Memorizar', id: '2' },
+  { code: 2, name: '忘れる', plainName: 'わすれる', group: 2, id: '3' },
+  { code: 2, name: 'Olvidar', id: '4' },
+  { code: 3, name: 'なくす', plainName: 'なくす', group: 1, id: '5' },
+  { code: 3, name: 'Perder', id: '6' },
+  { code: 4, name: '出す', plainName: 'だす', group: 1, id: '7' },
+  { code: 4, name: 'Entregar', id: '8' },
+  { code: 5, name: '払う', plainName: 'はらう', group: 1, id: '9' },
+  { code: 5, name: 'Pagar', id: '10' },
+  { code: 6, name: '返す', plainName: 'かえす', group: 1, id: '11' },
+  { code: 6, name: 'Devolver', id: '12' },
+  { code: 7, name: '出かける', plainName: 'でかける', group: 2, id: '13' },
+  { code: 7, name: 'Salir', id: '14' },
+  { code: 8, name: '脱ぐ', plainName: 'ぬぐ', group: 1, id: '15' },
+  { code: 8, name: 'Quitarse (ropa)', id: '16' },
+  { code: 9, name: '持って行く', plainName: 'もっていく', group: 1, id: '17' },
+  { code: 9, name: 'Llevar (algo)', id: '18' },
+  { code: 10, name: '持って来る', plainName: 'もってくる', group: 3, id: '19' },
+  { code: 10, name: 'Traer (algo)', id: '20' },
+  { code: 11, name: '心配する', plainName: 'しんぱいする', group: 3, id: '21' },
+  { code: 11, name: 'Preocuparse', id: '22' },
+  { code: 12, name: '残業する', plainName: 'ざんぎょうする', group: 3, id: '23' },
+  { code: 12, name: 'Hacer horas extras', id: '24' },
+  { code: 13, name: '出張する', plainName: 'しゅっちょうする', group: 3, id: '25' },
+  { code: 13, name: 'Viajar por trabajo', id: '26' }
+]
+
+const masuArray17 = [
+  { code: 1, name: '覚えます', plainName: 'おぼえます', group: 2, id: '1' },
+  { code: 1, name: 'Memorizar', id: '2' },
+  { code: 2, name: '忘れます', plainName: 'わすれます', group: 2, id: '3' },
+  { code: 2, name: 'Olvidar', id: '4' },
+  { code: 3, name: 'なくします', plainName: 'なくします', group: 1, id: '5' },
+  { code: 3, name: 'Perder', id: '6' },
+  { code: 4, name: '出します', plainName: 'だします', group: 1, id: '7' },
+  { code: 4, name: 'Entregar', id: '8' },
+  { code: 5, name: '払います', plainName: 'はらいます', group: 1, id: '9' },
+  { code: 5, name: 'Pagar', id: '10' },
+  { code: 6, name: '返します', plainName: 'かえします', group: 1, id: '11' },
+  { code: 6, name: 'Devolver', id: '12' },
+  { code: 7, name: '出かけます', plainName: 'でかけます', group: 2, id: '13' },
+  { code: 7, name: 'Salir', id: '14' },
+  { code: 8, name: '脱ぎます', plainName: 'ぬぎます', group: 1, id: '15' },
+  { code: 8, name: 'Quitarse (ropa)', id: '16' },
+  { code: 9, name: '持って行きます', plainName: 'もっていきます', group: 1, id: '17' },
+  { code: 9, name: 'Llevar (algo)', id: '18' },
+  { code: 10, name: '持って来ます', plainName: 'もってきます', group: 3, id: '19' },
+  { code: 10, name: 'Traer (algo)', id: '20' },
+  { code: 11, name: '心配します', plainName: 'しんぱいします', group: 3, id: '21' },
+  { code: 11, name: 'Preocuparse', id: '22' },
+  { code: 12, name: '残業します', plainName: 'ざんぎょうします', group: 3, id: '23' },
+  { code: 12, name: 'Hacer horas extras', id: '24' },
+  { code: 13, name: '出張します', plainName: 'しゅっちょうします', group: 3, id: '25' },
+  { code: 13, name: 'Viajar por trabajo', id: '26' }
+]
+
+const unit17 = {
+  base: baseArray17,
+  masu: masuArray17
+}
+
+const cardArray = {
+  0: unit0,
+  17: unit17
+}
+
+const rightCanvas = new bootstrap.Offcanvas('#offcanvasRight')
+const leftCanvas = new bootstrap.Offcanvas('#offcanvasLeft')
 
 // Shuffle function using Fisher-Yates algorithm
 function shuffle(array) {
@@ -122,6 +193,7 @@ const cardsWon = [];
 const gameStatus = document.getElementById('gameStatus');
 const resetButton = document.getElementById('resetButton');
 let currentSet = 'base'; // Establecer el conjunto inicial
+let currentUnit = 0; // Establecer la unidad inicial
 
 // Initialize the game
 function initGame() {
@@ -138,7 +210,7 @@ function initGame() {
   gameBoard.innerHTML = '';
 
   // Shuffle the cards
-  const shuffledCards = shuffle([...cardArray[currentSet]]);
+  const shuffledCards = shuffle([...cardArray[currentUnit][currentSet]]);
 
   // Create the board with shuffled cards
   shuffledCards.forEach((card) => {
@@ -195,7 +267,7 @@ function flipCard() {
   if (lockBoard) return; // Do nothing if the board is locked
 
   const cardId = this.getAttribute('data-id');
-  const cardFlipped = cardArray[currentSet].find((card) => card.id === cardId)
+  const cardFlipped = cardArray[currentUnit][currentSet].find((card) => card.id === cardId)
 
   // Do nothing if the same card is clicked
   if (firstCard && cardFlipped.id === firstCard.id) {
@@ -282,7 +354,7 @@ function resetBoard() {
 // Check if all pairs have been found
 function checkWinCondition() {
   const gameBoard = document.getElementById('gameBoard');
-  const totalCards = cardArray[currentSet].length;
+  const totalCards = cardArray[currentUnit][currentSet].length;
   const flippedCards = gameBoard.querySelectorAll('.flipped').length;
 
   if (flippedCards === totalCards) {
@@ -292,6 +364,11 @@ function checkWinCondition() {
 
 function updateCardSet(form) {
   currentSet = form; // Cambiar el conjunto actual
+  initGame();
+}
+
+function updateUnit(unit_num) {
+  currentUnit = unit_num;
   initGame();
 }
 
@@ -318,15 +395,27 @@ function getRandomColor() {
   return `rgb(${r}, ${g}, ${b})`;
 }
 
-
-
-
 // Agregar eventos a los botones
-document.getElementById('baseFormBtn').addEventListener('click', () => updateCardSet('base'));
-document.getElementById('masuFormBtn').addEventListener('click', () => updateCardSet('masu'));
+document.getElementById('baseFormBtn').addEventListener('click', () => {
+  updateCardSet('base')
+  rightCanvas.hide();
+});
+
+document.getElementById('masuFormBtn').addEventListener('click', () => {
+  updateCardSet('masu')
+  rightCanvas.hide();
+});
 
 // Event listener for Reset button
-resetButton.addEventListener('click', initGame);
+resetButton.addEventListener('click', () => {
+  initGame();
+  rightCanvas.hide();
+});
+
+document.getElementById('unit17').addEventListener('click', () => {
+  updateUnit(17);
+  leftCanvas.hide();
+});
 
 // Initialize the game on page load
 initGame();
