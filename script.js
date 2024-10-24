@@ -256,6 +256,8 @@ let firstCard, secondCard;
 let lockBoard = false;
 const cardsWon = [];
 
+const gameSection = document.getElementById('gameSection');
+const unit17Lesson = document.getElementById('unit17Lesson');
 const gameStatus = document.getElementById('gameStatus');
 const resetButton = document.getElementById('resetButton');
 let currentSet = 'base'; // Establecer el conjunto inicial
@@ -483,14 +485,24 @@ resetButton.addEventListener('click', () => {
   rightCanvas.hide();
 });
 
-document.getElementById('unit17').addEventListener('click', () => {
+document.getElementById('unit0').addEventListener('click', () => {
   updateUnit(0);
   leftCanvas.hide();
+  gameSection.style.display = 'block'
 });
 
 document.getElementById('unit17').addEventListener('click', () => {
   updateUnit(17);
   leftCanvas.hide();
+  gameSection.style.display = 'block'
+  unit17Lesson.style.display = 'none';
+});
+
+document.getElementById('unit17LessonBtn').addEventListener('click', () => {
+  updateUnit(17);
+  leftCanvas.hide();
+  gameSection.style.display = 'none'
+  unit17Lesson.style.display = 'block';
 });
 
 // Initialize the game on page load
