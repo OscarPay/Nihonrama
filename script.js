@@ -258,6 +258,8 @@ const cardsWon = [];
 
 const gameSection = document.getElementById('gameSection');
 const unit17Lesson = document.getElementById('unit17Lesson');
+const unit18Lesson = document.getElementById('unit18Lesson');
+const unit19Lesson = document.getElementById('unit19Lesson');
 const gameStatus = document.getElementById('gameStatus');
 const resetButton = document.getElementById('resetButton');
 let currentSet = 'base'; // Establecer el conjunto inicial
@@ -495,15 +497,44 @@ document.getElementById('unit17').addEventListener('click', () => {
   updateUnit(17);
   leftCanvas.hide();
   gameSection.style.display = 'block'
-  unit17Lesson.style.display = 'none';
+  hideLessons();
 });
 
 document.getElementById('unit17LessonBtn').addEventListener('click', () => {
   updateUnit(17);
   leftCanvas.hide();
   gameSection.style.display = 'none'
+  hideLessons();
   unit17Lesson.style.display = 'block';
 });
 
+document.getElementById('unit18LessonBtn').addEventListener('click', () => {
+  //updateUnit(18);
+  leftCanvas.hide();
+  gameSection.style.display = 'none'
+  hideLessons();
+  unit18Lesson.style.display = 'block';
+});
+
+document.getElementById('unit19LessonBtn').addEventListener('click', () => {
+  //updateUnit(19);
+  leftCanvas.hide();
+  gameSection.style.display = 'none'
+  hideLessons();
+  unit19Lesson.style.display = 'block';
+});
+
+// Function to hide elements by class name
+function hideLessons() {
+  const elements = document.querySelectorAll(`.lessonSection`);
+  elements.forEach(element => {
+    element.style.display = 'none';
+  });
+}
+
+hideLessons();
+
 // Initialize the game on page load
 initGame();
+
+
